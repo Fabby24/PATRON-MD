@@ -3,21 +3,12 @@
 services:
   - type: web
     name: PatronWebApp
-    env: python  # Assuming the project uses Python; change if needed
-    buildCommand: "pip install -r requirements.txt"  # Install dependencies
-    startCommand: "python app.py"  # The command to start your app
-
-    # Optional environment settings
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
     envVars:
-      DJANGO_SECRET_KEY: "{{ your_secret_key }}"  # Example for Django
-      DATABASE_URL: "{{ database_url }}"  # Database connection URL
-      DEBUG: "False"  # Set to "True" for debugging, False for production
-
-    # Additional build settings
-    build:
-      pythonVersion: "3.9"  # Set the version of Python as needed
-
-    # Optional: Specify ports
-    plan: free  # Free tier plan
-    region: oregon  # Specify region if needed
-
+      DJANGO_SECRET_KEY: "your_actual_secret_key"
+      DATABASE_URL: "your_actual_database_url"
+      DEBUG: "False"
+    plan: free
+    region: oregon
